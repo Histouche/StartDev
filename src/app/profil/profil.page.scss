@@ -1,0 +1,51 @@
+.bg-profil-dev{
+  height: 150px;
+  //background: url('../../assets/images/bg-profil-dev.jpg') center no-repeat;
+  background-size: cover;
+  /*background: #6c9c35;
+  background: -moz-linear-gradient(-45deg, #6c9c35 0%, #b0ff57 100%);
+  background: -webkit-linear-gradient(-45deg, #6c9c35 0%,#b0ff57 100%);
+  background: linear-gradient(135deg, #6c9c35 0%,#b0ff57 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9c35', endColorstr='#b0ff57',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background: #6c9c35; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #6c9c35 0%, #b0ff57 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #6c9c35 0%,#b0ff57 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #6c9c35 0%,#b0ff57 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9c35', endColorstr='#b0ff57',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+  .avatar{
+    border-radius: 50%;
+    width: 100px;
+    transform: translateY(calc(40% + 5px));
+  }
+}
+.actions-profil{
+  color: #fff;
+}
+.cands{
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  .nb-cands{
+    font-size: 14px;
+  }
+}
+.nb-offres{
+  font-size: 14px;
+  span{
+    font-size: 12px;
+  }
+}
+.edit-infos{
+  border-top: 3px solid #b0ff57;
+  color: #fff;
+  .edit-cv{
+    border-right: 1px solid #fff;
+  }
+}

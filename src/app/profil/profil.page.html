@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed no-padding="">
+    <ion-row class="bg-profil-dev" justify-content-center align-items-end>
+      <ion-col size="auto">
+        <img src="../../assets/images/avatar.jpg" class="avatar">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid fixed no-padding>
+    <ion-row class="mt-4 actions-profil">
+      <ion-col size="4">
+        <ion-row class="h-100" justify-content-center align-items-center>
+          <ion-col size="auto">
+            <ion-icon name="chatboxes"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Messages
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4" class="cands">
+        <ion-row class="h-100" justify-content-center align-items-center>
+          <ion-col class="nb-cands text-center">
+            {{canditaturesEnCours}} Candidature(s)<br><span>en cours</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4">
+        <ion-row class="h-100" justify-content-center align-items-center>
+          <ion-col class="nb-offres text-center">
+            {{offresEnCours}} offre(s) d'emploi<br><span>actuellement</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="edit-infos">
+      <ion-col>
+        <ion-row>
+          <ion-col class="edit-cv">
+            <ion-row class="h-100" justify-content-center align-items-center>
+              <ion-col size="auto">
+                <i class="material-icons">
+                  edit
+                </i>
+              </ion-col>
+              <ion-col>
+                Editer mon CV
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col class="edit-info">
+            <ion-row class="h-100" justify-content-center align-items-center>
+              <ion-col size="auto">
+                <ion-icon name="chatboxes"></ion-icon>
+              </ion-col>
+              <ion-col>
+                Editer mes informations
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
