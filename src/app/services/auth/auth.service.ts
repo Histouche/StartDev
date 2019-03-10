@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 
-//import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
+// import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs/Observable';
@@ -21,8 +21,8 @@ export class AuthProvider {
     url;
     user;
     userToken;
-    //JwtHelperService: JwtHelperService = new JwtHelperService();
-    //isExpired = JwtHelperService.isTokenExpired(myRawToken);
+    // JwtHelperService: JwtHelperService = new JwtHelperService();
+    // isExpired = JwtHelperService.isTokenExpired(myRawToken);
 
 
     constructor(public http: Http, private authHttp: HttpClient, private storage: Storage, public jwtHelper: JwtHelperService) {
