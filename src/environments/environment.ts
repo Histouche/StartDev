@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    urlAPI : "https://diane-admin.dev.mediadev.info/api/",
+    urlGlobal : "https://diane-admin.dev.mediadev.info/",
+    urlPhotos : "https://diane-admin.dev.mediadev.info/uploads/",
+    urlApp : "https://diane.dev.mediadev.info/",
 };
 
 /*
