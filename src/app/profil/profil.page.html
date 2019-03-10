@@ -1,11 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Profil
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <ion-grid fixed no-padding="">
     <ion-row class="bg-profil-dev" justify-content-center align-items-end>
@@ -15,7 +7,18 @@
     </ion-row>
   </ion-grid>
   <ion-grid fixed no-padding>
-    <ion-row class="mt-4 actions-profil">
+    <ion-row class="mt-4 pt-2 profil-infos">
+      <ion-col>
+        <ion-row>
+          <div class="edit-info-icon"><i class="material-icons">
+            edit
+          </i></div>
+          <ion-col size="12" class="nomprenom pb-0" text-center>{{prenom}} {{nom}}</ion-col>
+          <ion-col size="12" class="job" text-center>{{job}}</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="actions-profil">
       <ion-col size="4">
         <ion-row class="h-100" justify-content-center align-items-center>
           <ion-col size="auto">
@@ -36,7 +39,7 @@
       <ion-col size="4">
         <ion-row class="h-100" justify-content-center align-items-center>
           <ion-col class="nb-offres text-center">
-            {{offresEnCours}} offre(s) d'emploi<br><span>actuellement</span>
+            {{offresEnCours}} offre(s) d'emploi<br><span></span>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -59,15 +62,16 @@
           <ion-col class="edit-info">
             <ion-row class="h-100" justify-content-center align-items-center>
               <ion-col size="auto">
-                <ion-icon name="chatboxes"></ion-icon>
+
               </ion-col>
               <ion-col>
-                Editer mes informations
+
               </ion-col>
             </ion-row>
           </ion-col>
         </ion-row>
       </ion-col>
     </ion-row>
+
   </ion-grid>
 </ion-content>

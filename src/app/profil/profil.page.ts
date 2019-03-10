@@ -9,4 +9,7 @@ export class ProfilPage {
 
   canditaturesEnCours = 1;
   offresEnCours = 2;
+  nom = 'Rodrigues';
+  prenom = 'Jonathan';
+  job = "Developpeur Full Stack / Intégrateur"
 }

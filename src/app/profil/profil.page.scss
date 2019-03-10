@@ -1,5 +1,8 @@
+ion-title{
+  --color: #fff;
+}
 .bg-profil-dev{
-  height: 150px;
+  height: 120px;
   //background: url('../../assets/images/bg-profil-dev.jpg') center no-repeat;
   background-size: cover;
   /*background: #6c9c35;
@@ -13,7 +16,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 150px;
+    height: 120px;
     background: #6c9c35; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #6c9c35 0%, #b0ff57 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, #6c9c35 0%,#b0ff57 100%); /* Chrome10-25,Safari5.1-6 */
@@ -48,4 +51,19 @@
   .edit-cv{
     border-right: 1px solid #fff;
   }
+  i{
+    font-size: 14px;
+  }
+}
+.profil-infos{
+  color: #fff;
+  .nomprenom{
+    font-size: 20px;
+  }
+}
+.edit-info-icon{
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-size: 16px;
 }
