@@ -47,9 +47,10 @@ ion-title{
 }
 .edit-infos{
   border-top: 3px solid #b0ff57;
+  border-bottom: 3px solid #b0ff57;
   color: #fff;
   .edit-cv{
-    border-right: 1px solid #fff;
+    border-right: 1px solid #b0ff57;
   }
   i{
     font-size: 14px;
@@ -66,4 +67,10 @@ ion-title{
   right: 15px;
   top: 0;
   font-size: 16px;
+  .edit-info{
+    border-left: 1px solid #b0ff57;
+  }
+}
+.statut{
+  color: #fff;
 }
