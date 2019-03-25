@@ -101,62 +101,8 @@ export class AuthProvider {
         });
     }
 
-    /* addCompagnon(compagnon) {
-      return new Promise((resolve, reject) => {
-        if (this.user) {
-          if (!this.user.compagnons)
-            this.user.compagnons = [];
-          this.user.compagnons.push(compagnon);
-          this.storage.set('user_diane', this.user).then(() => {
-            resolve(true);
-          });
-        } else {
-          this.storage.get('user_diane').then((user) => {
-            this.user = user;
-            if (!this.user.compagnons)
-              this.user.compagnons = [];
-            this.user.compagnons.push(compagnon);
-            this.storage.set('user_diane', this.user).then(() => {
-              resolve(true);
-            });
-          })
-        }
-      });
-    } */
 
-    /* deleteCompagnon(compagnon) {
-      console.log('delete', compagnon);
-      return new Promise((resolve, reject) => {
-        if (this.user) {
-         if(this.user.compagnons) {
-           this.user.compagnons.splice(this.user.compagnons.indexOf(compagnon), 1);
-           this.storage.set('user_diane', this.user).then(() => {
-             resolve(true);
-           });
-         } else {
-           console.log('pas de compagnon');
-           resolve(false);
-         }
-        } else {
-          this.storage.get('user_diane').then((user) => {
-            this.user = user;
-            if (this.user.compagnons) {
-              this.user.compagnons.splice(this.user.compagnons.indexOf(compagnon), 1);
-              this.user.compagnons.push(compagnon);
-              this.storage.set('user_diane', this.user).then(() => {
-                resolve(true);
-              });
-            } else {
-              console.log('pas de compagnon');
-              resolve(false);
-            }
-          }).catch((err) => {
-            console.log(err);
-            resolve(false);
-          });
-        }
-      });
-    } */
+
 
     updateUser() {
         return new Promise((resolve, reject) => {
@@ -232,39 +178,6 @@ export class AuthProvider {
         });
     }
 
-    /* storeFiles() {
-      return new Promise((resolve, reject) => {
-        const fileTransfer: FileTransferObject = this.transfer.create();
-
-        if(this.user) {
-          let permis = this.user.user.permis;
-          let assurance = this.user.user.assurance;
-          console.log(permis, assurance);
-
-        }
-
-        //TEST
-        this.getUserInfos().then((user) => {
-          console.log(user);
-          let permis = user['user'].permis;
-          let assurance = user['user'].assurance;
-          console.log(urlGlobal+permis);
-
-          const url = 'https://diane-admin.dev.mediadev.info/fichiers/users/Original-Duplicatat-AutorisationChasserAccompagne.jpg';
-          console.log('URL', url);
-
-
-          fileTransfer.download(url, cordova.file.dataDirectory+'permis.jpg').then((entry) => {
-            console.log('download complete: ' + entry.toUrl());
-          }, (error) => {
-            // handle error
-            console.log(error);
-          });
-        })
-
-        resolve(true);
-      });
-    } */
 
     loggedIn() {
         return this.storage.get('id_token_diane').then(token => {
