@@ -2,7 +2,7 @@
   <ion-grid fixed no-padding="">
     <ion-row class="bg-profil-dev" justify-content-center align-items-end>
       <ion-col size="auto">
-        <img src="../../assets/images/avatar.jpg" class="avatar">
+        <img src="../../../assets/images/avatar.jpg" class="avatar">
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -32,14 +32,14 @@
       <ion-col size="4" class="cands">
         <ion-row class="h-100" justify-content-center align-items-center>
           <ion-col class="nb-cands text-center">
-            {{canditaturesEnCours}} Candidature(s)<br><span>en cours</span>
+            {{canditaturesEnCours}} Candidature<br><span>en cours</span>
           </ion-col>
         </ion-row>
       </ion-col>
       <ion-col size="4">
         <ion-row class="h-100" justify-content-center align-items-center>
           <ion-col class="nb-offres text-center">
-            {{offresEnCours}} offre(s) d'emploi<br><span></span>
+            {{offresEnCours}} offres d'emploi<br><span></span>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -63,11 +63,11 @@
             <ion-row class="h-100" justify-content-center align-items-center>
               <ion-col size="auto">
                 <i class="material-icons">
-                  edit
+                  people
                 </i>
               </ion-col>
               <ion-col>
-
+                Relations
               </ion-col>
             </ion-row>
           </ion-col>
@@ -78,24 +78,47 @@
     <ion-row class="statut">
       <ion-col size="12">
         <ion-row>
-          <ion-col size="12" class="text-center">Votre statut dans le marché de l'emploi</ion-col>
+          <ion-col size="12" class="text-center h3">Votre statut dans le marché de l'emploi</ion-col>
           <ion-col size="12">
             <ion-row justify-content-center>
-              <ion-col size="11">
+              <ion-col size="5">
                 <ion-row class="h-100">
                   <ion-col class="text-center statut-btn">En recherche de contrat</ion-col>
                 </ion-row>
               </ion-col>
-              <ion-col size="11">
-                <ion-row class="h-100">
-                  <ion-col class="text-center statut-btn">Observe le marché</ion-col>
-                </ion-row>
-              </ion-col>
-              <ion-col size="11">
+              <ion-col size="5">
                 <ion-row class="h-100">
                   <ion-col class="text-center statut-btn  ">Ne recherche pas</ion-col>
                 </ion-row>
               </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="dashboard">
+      <ion-col size="12">
+        <ion-row>
+          <ion-col class="h2">Tableau de bord</ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="12">
+        <ion-row>
+          <ion-col>
+            <ion-row class="h-100 box-dash">
+              <ion-col size="12" class="number-dash py-0">14</ion-col>
+              <ion-col size="12" class="text-dash py-0">Apparations dans les recherches</ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row class="h-100 box-dash">
+              <ion-col size="12" class="number-dash py-0">0</ion-col>
+              <ion-col size="12" class="text-dash py-0">Offres épinglés</ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row class="h-100 box-dash" align-items-center>
+              <ion-col size="12" class="market-text">état du marché</ion-col>
             </ion-row>
           </ion-col>
         </ion-row>
