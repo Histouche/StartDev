@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment';
 // import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Storage } from '@ionic/storage';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 declare var cordova: any;
@@ -30,7 +30,7 @@ export class AuthProvider {
         this.url = environment.urlAPI;
     }
 
-    login(user) {
+     /*login(user) {
         return new Promise((resolve, reject) => {
 
             let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -58,7 +58,7 @@ export class AuthProvider {
                     err => { reject(err); }
                 )
         });
-    }
+    }*/
 
     public registerInfos(data) {
         console.log('register', data);
@@ -205,7 +205,7 @@ export class AuthProvider {
     initPassword(m, c) {
         return new Promise((resolve, reject) => {
             this.http.get(this.url+"user/initPassword?m="+m+"&c="+c)
-                .map((res: Response) => res.json())
+                //.map((res: Response) => res.json())
                 .subscribe(
                     data => {
                         console.log('result init password', data);
@@ -220,7 +220,7 @@ export class AuthProvider {
         let data = {m: m, c: c, password: password.password, confirm: password.confirm};
         return new Promise((resolve, reject) => {
             this.http.post(this.url+"user/resetPassword", data)
-                .map((res: Response) => res.json())
+                //.map((res: Response) => res.json())
                 .subscribe(
                     data => {
                         console.log('result reset password', data);
