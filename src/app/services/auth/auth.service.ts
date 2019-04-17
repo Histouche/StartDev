@@ -194,13 +194,13 @@ export class AuthProvider {
         return this.storage.remove('id_token_diane');
     }
 
-    public logout() {
+    /*  public logout() {
         return Observable.create(observer => {
-            this.deleteToken();
-            observer.next(true);
-            observer.complete();
-        });
-    }
+             this.deleteToken();
+             observer.next(true);
+             observer.complete();
+         });
+     }*/
 
     initPassword(m, c) {
         return new Promise((resolve, reject) => {

@@ -1,0 +1,31 @@
+ion-header{
+  background-color: #333;
+  --padding-start: 15px;
+}
+ion-content{
+  --background: #222;
+  --color: #fff;
+  .title-offre{
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .title-temps{
+    color: #ddd;
+    font-size: 15px;
+  }
+  .offre-ann{
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+ion-footer{
+  background: #333;
+  color: #fff;
+  .offre-title{
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .offre-lieu{
+    font-size: 15px;
+  }
+}
