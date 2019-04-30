@@ -11,5 +11,5 @@ export class ProfilPage {
   offresEnCours = 2;
   nom = 'Rodrigues';
   prenom = 'Jonathan';
-  job = "Developpeur Full Stack / Intégrateur"
+  job = "Developpeur Full Stack / Intégrateur";
 }

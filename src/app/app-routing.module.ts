@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'relations', loadChildren: './pages/profil-pages/relations/relations.module#RelationsPageModule' },
   { path: 'edit-cv', loadChildren: './pages/profil-pages/edit-cv/edit-cv.module#EditCvPageModule' },
   { path: 'recherche', loadChildren: './pages/recherche/recherche.module#RecherchePageModule' },
-  { path: 'offre-detail', loadChildren: './pages/offre-detail/offre-detail.module#OffreDetailPageModule' }
+  { path: 'offre-detail', loadChildren: './pages/offre-detail/offre-detail.module#OffreDetailPageModule' },
+  { path: 'connexion', loadChildren: './pages/connexion/connexion.module#ConnexionPageModule' }
 
 ];
 @NgModule({

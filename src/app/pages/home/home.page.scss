@@ -2,6 +2,20 @@
   max-height: 35vh;
   overflow: hidden;
 }
+ion-card-title{
+  color: #fff;
+}
 ion-label{
   color: #fff !important;
+}
+.box{
+  color: #fff;
+  border: 1px solid #dfdfdf;
+  .box-name{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .box-desc{
+    font-size: 14px;
+  }
 }
