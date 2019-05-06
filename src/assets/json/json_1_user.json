@@ -1,13 +1,4 @@
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-profil',
-  templateUrl: 'profil.page.html',
-  styleUrls: ['profil.page.scss']
-})
-export class ProfilPage {
-
-  user = {
+{
     "id": 1,
     "username": "admin",
     "username_canonical": "admin",
@@ -79,9 +70,4 @@ export class ProfilPage {
             "competence": "Data analyste, data science, python"
         }
     ]
-}
-
-  canditaturesEnCours = 1;
-  offresEnCours = 2;
-  job = "Developpeur Full Stack / Intégrateur";
 }

@@ -9,6 +9,11 @@ ion-content{
     font-size: 22px;
     line-height: 24px;
   }
+  .title-prix{
+    font-size: 26px;
+    font-weight: 600;
+    color: #03A9F4;
+  }
   .title-temps{
     color: #ddd;
     font-size: 15px;
@@ -27,5 +32,9 @@ ion-footer{
   }
   .offre-lieu{
     font-size: 15px;
+  }
+  .offre-prix-mobile{
+    font-size: 18px;
+    color: #03A9F4;
   }
 }

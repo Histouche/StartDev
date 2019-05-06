@@ -11,6 +11,11 @@ ion-label{
 .box{
   color: #fff;
   border: 1px solid #dfdfdf;
+  background-color: #121212;
+  .box-title{
+    font-size: 19px;
+    letter-spacing: 0.5px;
+  }
   .box-name{
     font-size: 16px;
     font-weight: 600;

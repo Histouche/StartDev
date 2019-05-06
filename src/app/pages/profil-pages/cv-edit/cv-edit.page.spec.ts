@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditCvPage } from './edit-cv.page';
+import { CvEditPage } from './cv-edit.page';
 
-describe('EditCvPage', () => {
-  let component: EditCvPage;
-  let fixture: ComponentFixture<EditCvPage>;
+describe('CvEditPage', () => {
+  let component: CvEditPage;
+  let fixture: ComponentFixture<CvEditPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditCvPage ],
+      declarations: [ CvEditPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditCvPage);
+    fixture = TestBed.createComponent(CvEditPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

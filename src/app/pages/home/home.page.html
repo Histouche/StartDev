@@ -29,37 +29,26 @@
   <ion-grid class="p-0">
     <ion-grid fixed class="p-0">
       <ion-row>
-        <ion-col size="12" size-md="6">
+        <ion-col size="12" size-md="6" *ngFor="let annonce of annonces">
           <ion-row>
-            <ion-col class="box" routerLink="/offre-detail">
+            <ion-col class="box" (click)="goToAnnonce(annonce)">
               <ion-row>
-                <ion-col size="auto" class="box-logo"></ion-col>
-                <ion-col class="box-name">Start-dev <span class="date">le 20/04/209</span></ion-col>
-                <ion-col size="auto" class="box-options">
-                  <ion-icon name="more" mode="md"></ion-icon>
+                <ion-col class="box-title pb-0">
+                  {{annonce.titre}}
                 </ion-col>
+                <ion-col size="auto" class="box-options pb-0">
+                    <ion-icon name="more" mode="md"></ion-icon>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="box-remuneration" size="auto">
+                  {{annonce.remuneration}} € / j.
+                </ion-col>
+                <ion-col class="box-name">{{annonce.entreprise}} <span class="date">le 20/04/209</span></ion-col>
               </ion-row>
               <ion-row>
                 <ion-col class="box-desc">
-                  Découvrez les opportunités de start-dev.
-                </ion-col>
-              </ion-row>
-            </ion-col>
-          </ion-row>
-        </ion-col>
-        <ion-col size="12" size-md="6">
-          <ion-row>
-            <ion-col class="box" routerLink="/offre-detail">
-              <ion-row>
-                <ion-col size="auto" class="box-logo"></ion-col>
-                <ion-col class="box-name">Altran <span class="date">le 20/04/209</span></ion-col>
-                <ion-col size="auto" class="box-options">
-                  <ion-icon name="more" mode="md"></ion-icon>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col class="box-desc">
-                  Nous cherchons un analyste big data pour répondre aux besoins de nos clients pour un projet.
+                  {{annonce.description}}
                 </ion-col>
               </ion-row>
             </ion-col>

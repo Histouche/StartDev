@@ -1,14 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
-})
-export class HomePage implements OnInit {
-
-  annonces = [
+[
     {
         "id": 10,
         "titre": "Développeur Symfony",
@@ -229,19 +219,3 @@ export class HomePage implements OnInit {
         }
     }
 ]
-
-
-  constructor(private router: Router ){
-
-  } 
-  ngOnInit(){
-
-  }
-
-  goToAnnonce(annonce){
-    let navigationExtras: NavigationExtras = {
-      queryParams: annonce
-  };
-    this.router.navigate(['/offre-detail'], navigationExtras);
-  }
-}

@@ -2,10 +2,10 @@
 <ion-grid>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12" text-center class="title-offre mb-2">Développeur Angular 2+</ion-col>
+      <ion-col size="12" text-center class="title-offre mb-2">{{annonce.titre}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12" text-center class="title-lieu  mb-2">Alphalives</ion-col>
+      <ion-col size="12" text-center class="title-lieu  mb-2">{{annonce.entreprise}}</ion-col>
       <ion-col>
         <svg version="1.1" class="logo" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 194 800 196.7" enable-background="new 0 194 800 196.7" xml:space="preserve">
         <polygon id="grey" opacity="7.000000e-002" fill="#333333" enable-background="new " points="26.1,230 65.6,317.8 71.6,304.3
@@ -42,44 +42,17 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12" text-center class="title-temps mb-2">Paris : Temps plein</ion-col>
+      <ion-col size="12" text-center class="title-prix mb-2">{{annonce.remuneration}} €</ion-col>
     </ion-row>
     <ion-row justify-content-center class=" mb-2">
-      <ion-col size="8" text-center class="btn-primary">Contacter Alphalives</ion-col>
+      <ion-col size="8" text-center class="btn-primary">Contacter {{annonce.entreprise}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12" text-center class="offre-ann mb-2">Description </ion-col>
+      <ion-col size="12" text-center class="offre-ann mb-2">Description de la mission</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12" class="detail-offre">
-        Nous sommes à la recherche de notre futur Lead Dev !<br><br>
-
-        L’objectif est d’encadrer et aider l’équipe tech (12 personnes) à faire face aux prochains challenges techniques aux côtés de notre CPO, du CTO et des fondateurs :<br><br>
-
-        - Participer à l'élaboration des futurs produits en Angular 6<br>
-        - Amélioration de la plateforme existante en adéquation avec nos retours utilisateurs<br>
-        - Développement de nouvelles features qui auront un impact direct sur notre communauté<br>
-        - Management de l’équipe Tech et mise en place de process<br>
-        - Veille technique sur les nouveaux besoins et technos, participation à des events Tech<br>
-        - Gestion de notre API et backend (Go)<br>
-        - Stack : Go, Angular 6, Javascript, Google AppEngine, Algolia, Ionic<br>
-
-        En plus de ces challenges techniques c’est l’opportunité d’être backé techniquement par Google, de monter en compétences entrepreneurial et technique, de participer à des formations/événements avec nos partenaires (Google, Blablacar, Ubisoft, etc) et de collaborer sur des problématiques data et techniques avec toute nos équipes (marketing, communauté, business, international).
-        <br>
-        Pour finir, nous sommes une belle équipe de +45 personnes qui collabore chaque jour avec +30.000 freelances et 5.000 entreprises à travers l’Europe.
-        <br>
-        L'intégration à ce poste donne droit à une part d'equity (BSPCE), du remote, ainsi que des perspectives d'évolution fortes.
-        <br>
-        Profil recherché:<br><br>
-
-        - Forte expérience en Javascript<br>
-        - Idélaement une expérience en Angular et une affinité avec Golang<br>
-        - Profil ayant déjà managé une équipe de développeurs<br>
-        - Expérience dans la mise en place/gestion de process (tests unitaires, intégration continue, review, déploiement, etc)<br>
-        - Profil ayant un attrait pour l'entrepreunariat
-      </ion-col>
-      <ion-col>
-        Prestation : prix à négocier
+        {{annonce.description}}
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -91,17 +64,17 @@
       <ion-col>
         <ion-row>
           <ion-col size="12" class="pb-0 offre-title">
-            Développeur Angular 2+
+            {{annonce.titre}}
           </ion-col>
-          <ion-col class="offre-lieu">
-            Paris 13
+          <ion-col class="offre-prix-mobile">
+            {{annonce.remuneration}} €
           </ion-col>
         </ion-row>
       </ion-col>
       <ion-col size="auto">
         <ion-row class="h-100" align-items-center>
-          <ion-col class="btn-primary px-4">
-            Contacter
+          <ion-col class="btn-primary btn-mobile-contact rounded-circle text-center">
+              <ion-icon name="paper-plane"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-col>

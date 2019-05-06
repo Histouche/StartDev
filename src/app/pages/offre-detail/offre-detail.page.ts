@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-offre-detail',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffreDetailPage implements OnInit {
 
-  constructor() { }
+  annonce;
+
+  constructor(private router: ActivatedRoute) { 
+    this.router.queryParams.subscribe(params=> {
+      this.annonce = params;
+    })
+  }
 
   ngOnInit() {
+    console.log(this.annonce);
   }
 
 }

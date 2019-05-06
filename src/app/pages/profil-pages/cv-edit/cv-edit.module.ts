@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditCvPage } from './edit-cv.page';
+import { CvEditPage } from './cv-edit.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: EditCvPage
+    component: CvEditPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EditCvPage]
+  declarations: [CvEditPage]
 })
-export class EditCvPageModule {}
+export class CvEditPageModule {}

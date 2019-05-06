@@ -13,7 +13,7 @@
           <div class="edit-info-icon" routerLink="/edit-profil"><i class="material-icons">
             edit
           </i></div>
-          <ion-col size="12" class="nomprenom pb-0" text-center>{{prenom}} {{nom}}</ion-col>
+          <ion-col size="12" class="nomprenom pb-0" text-center>{{user.prenom}} {{user.nom}}</ion-col>
           <ion-col size="12" class="job" text-center>{{job}}</ion-col>
         </ion-row>
       </ion-col>
@@ -32,7 +32,7 @@
       <ion-col size="4" class="cands btn-profil">
         <ion-row class="h-100" justify-content-center align-items-center>
           <ion-col class="nb-cands text-center">
-            {{canditaturesEnCours}} Candidature<br><span>en cours</span>
+            {{user.annonces.length}} Candidatures<br><span>en cours</span>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -108,12 +108,6 @@
             <ion-row class="h-100 box-dash">
               <ion-col size="12" class="number-dash py-0">14</ion-col>
               <ion-col size="12" class="text-dash py-0">Apparations dans les recherches</ion-col>
-            </ion-row>
-          </ion-col>
-          <ion-col>
-            <ion-row class="h-100 box-dash">
-              <ion-col size="12" class="number-dash py-0">0</ion-col>
-              <ion-col size="12" class="text-dash py-0">Offres épinglés</ion-col>
             </ion-row>
           </ion-col>
           <ion-col>
