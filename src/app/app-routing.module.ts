@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'recherche', loadChildren: './pages/recherche/recherche.module#RecherchePageModule' },
   { path: 'offre-detail', loadChildren: './pages/offre-detail/offre-detail.module#OffreDetailPageModule' },
   { path: 'connexion', loadChildren: './pages/connexion/connexion.module#ConnexionPageModule' },
-  { path: 'profil', loadChildren: './pages/profil/profil.module#EditCvPageModule' },
+  { path: 'profil', loadChildren: './pages/profil/profil.module#ProfilPageModule' },
   { path: 'messagerie', loadChildren: './pages/messagerie/messagerie.module#MessageriePageModule' },
   { path: 'messages', loadChildren: './pages/messages/messages.module#MessagesPageModule' },
   { path: 'cv-edit', loadChildren: './pages/profil-pages/cv-edit/cv-edit.module#CvEditPageModule' },
