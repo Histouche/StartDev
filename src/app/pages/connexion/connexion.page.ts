@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-// import { AuthService } from '../../services/auth/auth.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { NetworkService } from '../../services/network/network.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,27 @@ import { Router } from '@angular/router';
 export class ConnexionPage implements OnInit {
 
   tab;
-  user = {email: "", password: ""};
+  user = {
+      username: "",
+      password: "",
+      email: "",
+      role: "",
+      nom: "",
+      prenom: "",
+      adresse:"",
+      telephone:"",
+      description:"",
+      isDisponible:"",
+      siteWeb: "",
+      prix: "",
+      pays:"",
+      langue: "fr",
+      age: ""
+   };
   erreur;
+  @Input() password;
 
-  constructor(/*private authService: AuthService; */ private router: Router) {
+  constructor(private network: NetworkService, private router: Router) {
       this.tab = true;
   }
 
@@ -27,9 +44,9 @@ export class ConnexionPage implements OnInit {
       this.tab = false;
     }
   }
-  /*connexion() {
+  connexion() {
       this.erreur = null;
-      this.authService.login(this.user).then((result) => {
+      this.network.connexion(this.user, this.password).then((result) => {
           console.log(result);
           if(result['error']) {
               if(result['error'].indexOf("vérifiée")==-1) {
@@ -38,11 +55,25 @@ export class ConnexionPage implements OnInit {
                   this.erreur = "Votre adresse email n'a pas été vérifiée."
               }
           } else {
-              this.router.navigate(['/programme']);
+              this.router.navigate(['/home']);
           }
       }).catch((err) => {
           console.log(err);
       });
-  }*/
+  }
+
+  inscription(){
+      this.erreur = null;
+      this.network.inscription(this.user).then((result) => {
+        console.log(result);
+          if(result['error']) {
+              console.log("erreur inscription");
+          } else {
+              this.router.navigate(['/home']);
+          }
+      }).catch((err) => {
+        console.log(err);
+    });
+  }
 
 }
