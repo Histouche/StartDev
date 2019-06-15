@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NetworkService } from '../../services/network/network.service';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-connexion',
@@ -30,7 +31,7 @@ export class ConnexionPage implements OnInit {
   erreur;
   @Input() password;
 
-  constructor(private network: NetworkService, private router: Router) {
+  constructor(private network: NetworkService, private router: Router, public storage: Storage) {
       this.tab = true;
   }
 
@@ -45,7 +46,7 @@ export class ConnexionPage implements OnInit {
     }
   }
   connexion() {
-      this.erreur = null;
+      /*this.erreur = null;
       this.network.connexion(this.user, this.password).then((result) => {
           console.log(result);
           if(result['error']) {
@@ -55,25 +56,27 @@ export class ConnexionPage implements OnInit {
                   this.erreur = "Votre adresse email n'a pas été vérifiée."
               }
           } else {
+              this.storage.set('user_id', result.id);
               this.router.navigate(['/home']);
           }
       }).catch((err) => {
           console.log(err);
-      });
+      });*/
   }
 
   inscription(){
-      this.erreur = null;
+      /*this.erreur = null;
       this.network.inscription(this.user).then((result) => {
         console.log(result);
           if(result['error']) {
               console.log("erreur inscription");
           } else {
+              this.storage.set('user_id', result.id);
               this.router.navigate(['/home']);
           }
       }).catch((err) => {
         console.log(err);
-    });
+    });*/
   }
 
 }
