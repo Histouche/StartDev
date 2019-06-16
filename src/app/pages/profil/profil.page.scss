@@ -105,3 +105,19 @@ ion-title{
 .btn-profil{
   background-color: #333;
 }
+.no-ava{
+  border-radius: 50%;
+  background-color: #333;
+  color: #2196F3;
+  font-size: 50px;
+  width: 90px !important;
+  height: 90px;
+  transform: translateY(calc(40% + 5px));
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(255,255,255,1);
+  box-shadow: 0px 2px 5px 0px rgba(255,255,255,1);
+  display: flex;
+  ion-icon{
+    margin: auto;
+  }
+}

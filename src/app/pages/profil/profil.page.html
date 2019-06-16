@@ -1,8 +1,11 @@
 <ion-content>
   <ion-grid fixed no-padding="">
     <ion-row class="bg-profil-dev" justify-content-center align-items-end>
-      <ion-col size="auto">
+      <ion-col *ngIf="ava" size="auto">
         <img src="../../../assets/images/avatar.jpg" class="avatar">
+      </ion-col>
+      <ion-col *ngIf="!ava" size="auto" class="no-ava">
+        <ion-icon name="person" mode="md"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-grid>

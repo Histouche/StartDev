@@ -86,6 +86,7 @@ export class ProfilPage implements OnInit {
         ]
     }
 
+    ava = false;
     id;
     canditaturesEnCours = 1;
     offresEnCours = 2;
