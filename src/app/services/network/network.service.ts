@@ -99,6 +99,21 @@ export class NetworkService {
                       reject(err);
                   }
               );
+      })
+      return new Promise((resolve, reject) => {
+          this.http.post(this.url + 'post/postule?userId=' + user.id + '&annonceId=' + annonce.id, '')
+              .subscribe(
+                  data => {
+                      console.log(data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => { reject(err) })
       });
   }
 
@@ -177,7 +192,13 @@ export class NetworkService {
                 .subscribe(
                     data => {
                         console.log(data);
-                        resolve(data);
+                        this.setCurrentUser(data).then((result) => {
+                            if ( result['error']) {
+                            } else {
+                                console.log('user enregistré', result)
+                                resolve(data);
+                            }
+                        });
                     },
                     err => { reject(err) })
         });
