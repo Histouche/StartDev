@@ -12,7 +12,23 @@ import { Storage } from '@ionic/storage';
 })
 export class ProfilPage implements OnInit {
 
-    user;
+    user = {
+        username: "",
+        password: "",
+        email: "",
+        role: "ROLE_FREELANCE",
+        nom: "",
+        prenom: "",
+        adresse:"",
+        telephone:"",
+        description:"",
+        isDisponible:"",
+        siteWeb: "",
+        prix: "",
+        pays:"",
+        langue: "fr",
+        age: ""
+    };
 
     ava = false;
     id;
@@ -24,7 +40,22 @@ export class ProfilPage implements OnInit {
 
     }
     ngOnInit() {
-
+        this.storage.get('id_token_startdev').then((val) => {
+            this.user.username = val.username;
+            this.user.email = val.email;
+            this.user.password = val.password;
+            this.user.role = val.role;
+            this.user.nom = val.nom;
+            this.user.prenom = val.prenom;
+            this.user.adresse = val.adresse;
+            this.user.telephone = val.telephone;
+            this.user.isDisponible = val.isDisponible;
+            this.user.siteWeb = val.siteWeb;
+            this.user.prix = val.prix;
+            this.user.pays = val.pays;
+            this.user.age = val.age;
+            console.log(this.user);
+        });
     }
 
 }

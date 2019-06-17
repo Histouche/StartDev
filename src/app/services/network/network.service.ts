@@ -143,7 +143,7 @@ export class NetworkService {
       });
   }
 
-  inscription(user) {
+  exinscription(user) {
     console.log("dans register")
     return new Promise((resolve, reject) => {
       console.log("User a inscrire ", user);
@@ -169,6 +169,19 @@ export class NetworkService {
         )
     });
   }
+
+    inscription(user) {
+        console.log("dans register");
+        return new Promise((resolve, reject) => {
+            this.http.post(this.url + 'post/user', user)
+                .subscribe(
+                    data => {
+                        console.log(data);
+                        resolve(data);
+                    },
+                    err => { reject(err) })
+        });
+    }
   connexion(user) {
     return new Promise((resolve, reject) => {
       console.log('user', user);
