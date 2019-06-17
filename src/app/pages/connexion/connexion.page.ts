@@ -46,7 +46,7 @@ export class ConnexionPage implements OnInit {
     }
   }
   connexion() {
-      /*this.erreur = null;
+      this.erreur = null;
       this.network.connexion(this.user, this.password).then((result) => {
           console.log(result);
           if(result['error']) {
@@ -61,11 +61,11 @@ export class ConnexionPage implements OnInit {
           }
       }).catch((err) => {
           console.log(err);
-      });*/
+      });
   }
 
   inscription(){
-      /*this.erreur = null;
+      this.erreur = null;
       this.network.inscription(this.user).then((result) => {
         console.log(result);
           if(result['error']) {
@@ -76,7 +76,7 @@ export class ConnexionPage implements OnInit {
           }
       }).catch((err) => {
         console.log(err);
-    });*/
+    });
   }
 
 }
