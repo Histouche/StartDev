@@ -74,7 +74,48 @@ export class NetworkService {
         )
     })
   }
-  
+
+  updateUser(user) {
+      console.log("update user fonction");
+      return new Promise((resolve, reject) => {
+          console.log("User a mettre à jour ", user);
+          this.http.get(this.url + 'update/user?username=' + user.username
+              + '&password=' + user.password
+              + '&email=' + user.email
+              + '&role=' + user.role
+              + '&nom=' + user.nom
+              + '&prenom=' + user.prenom
+              + '&adresse=' + user.adresse
+              + '&telephone=' + user.telephone
+              + '&description=' + user.description
+              + '&isDisponible=' + user.isDisponible
+              + '&siteWeb=' + user.siteWeb
+              + '&prix=' + user.prix
+              + '&pays=' + user.pays
+              + '&langue=' + 'fr'
+              + '&age=' + user.age )
+              .map(res => {
+                  console.log("map res", res)
+                  return res;
+              })
+              .subscribe(
+                  data => {
+                      console.log("subscribe update user", data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => {
+                      reject(err);
+                  }
+              )
+      });
+  }
+
   inscription(user) {
     console.log("dans register")
     return new Promise((resolve, reject) => {
@@ -129,7 +170,7 @@ export class NetworkService {
     return new Promise((resolve, reject) => {
       console.log(token);
       this.storage.set('id_token_startdev', token);
-    this.storage.set('user_id', token.id);
+        this.storage.set('user_id', token.id);
       var session = this.storage.get('id_token_startdev') || null;
       if (session != null)
         resolve(true);

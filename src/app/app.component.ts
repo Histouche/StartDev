@@ -13,7 +13,7 @@ import { Storage } from '@ionic/storage';
 export class AppComponent {
 
   connecte = false;
-
+  session;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -22,7 +22,8 @@ export class AppComponent {
     public storage: Storage
   ) {
     this.initializeApp();
-    if (this.connecte === false  ) {
+    this.session = this.storage.get('id_token_startdev');
+    if (this.connecte === false && this.session == 'undefined') {
         this.router.navigate(['/connexion']);
     }
       /* this.authService.loggedIn().then((loggedIn) => {

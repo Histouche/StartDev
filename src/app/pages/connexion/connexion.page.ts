@@ -15,7 +15,7 @@ export class ConnexionPage implements OnInit {
       username: "",
       password: "",
       email: "",
-      role: "",
+      role: "ROLE_FREELANCE",
       nom: "",
       prenom: "",
       adresse:"",
