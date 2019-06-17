@@ -93,7 +93,7 @@ export class NetworkService {
                     console.log('user enregistré', result)
                     resolve(data);
                 }
-            })
+            });
           },
           err => {
             reject(err);
@@ -111,18 +111,13 @@ export class NetworkService {
         .subscribe(
           data => {
             console.log("user", data)
-            if (data && data['_body'].indexOf('error') == -1) {
-              console.log("premier if")
-              this.setCurrentUser(data['_body']).then(() => {
-                console.log("set current user ok")
-              }).catch((err) => {
-                console.log("set current user pas ok")
-                reject(err);
-              });
-            } else {
-              console.log(JSON.parse(data['_body']));
-              reject(JSON.parse(data['_body']));
-            }
+            this.setCurrentUser(data).then((result) => {
+                if ( result['error']) {
+                } else {
+                    console.log('user enregistré', result)
+                    resolve(data);
+                }
+            });
           },
           err => {
             reject(err);

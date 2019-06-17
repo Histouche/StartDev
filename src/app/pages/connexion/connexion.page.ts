@@ -71,7 +71,7 @@ export class ConnexionPage implements OnInit {
           if(result['error']) {
               console.log("erreur inscription");
           } else {
-              this.storage.set('user_id', result.id);
+              // this.storage.set('user_id', result.id);
               this.router.navigate(['/home']);
           }
       }).catch((err) => {
