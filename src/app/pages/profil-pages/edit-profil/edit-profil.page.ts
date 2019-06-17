@@ -27,6 +27,7 @@ export class EditProfilPage implements OnInit {
         langue: "fr",
         age: ""
     };
+    erreur;
 
   constructor(private network: NetworkService, private router: Router, public storage: Storage) {
   }
@@ -38,6 +39,21 @@ export class EditProfilPage implements OnInit {
       this.user.password = val.password;
       this.user.role = val.role;
       console.log(this.user);
+    });
+  }
+
+  edit() {
+    this.erreur = null;
+    this.network.updateUser(this.user).then((result) => {
+        console.log(result);
+        if (result['error']) {
+            console.log("erreur mise à jour user");
+        } else {
+            // this.storage.set('user_id', result.id);
+            this.router.navigate(['/profil']);
+        }
+    }).catch((err) => {
+        console.log(err);
     });
   }
 
