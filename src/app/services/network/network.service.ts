@@ -103,7 +103,7 @@ export class NetworkService {
   }
   connexion(user, password) {
     return new Promise((resolve, reject) => {
-     // console.log(user);
+      console.log('user', user);
       this.http.get(this.url + 'login?username='+user+'&password='+password)
         /* .map(res => {
           return res;
