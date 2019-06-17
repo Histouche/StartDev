@@ -47,7 +47,7 @@ export class ConnexionPage implements OnInit {
   }
   connexion() {
       this.erreur = null;
-      this.network.connexion(this.user, this.password).then((result) => {
+      this.network.connexion(this.user).then((result) => {
           console.log(result);
           if ( result['error']) {
               if ( result['error'].indexOf("vérifiée") == -1) {
