@@ -57,7 +57,7 @@ export class ConnexionPage implements OnInit {
               }
           } else {
               // this.storage.set('user_id', result.id);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/']);
           }
       }).catch((err) => {
           console.log(err);
@@ -72,7 +72,7 @@ export class ConnexionPage implements OnInit {
               console.log("erreur inscription");
           } else {
               // this.storage.set('user_id', result.id);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/']);
           }
       }).catch((err) => {
         console.log(err);
