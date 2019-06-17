@@ -27,7 +27,9 @@ export class ProfilPage implements OnInit {
         prix: "",
         pays:"",
         langue: "fr",
-        age: ""
+        age: "",
+        metier: "",
+        énumération : true
     };
 
     ava = false;

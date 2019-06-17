@@ -29,7 +29,9 @@ export class OffreDetailPage implements OnInit {
         prix: "",
         pays:"",
         langue: "fr",
-        age: ""
+        age: "",
+        metier: "",
+        énumération : true
     };
 
   constructor(private Arouter: ActivatedRoute, private network: NetworkService, private router: Router, public storage: Storage) {

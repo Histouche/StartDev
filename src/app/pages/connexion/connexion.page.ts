@@ -26,7 +26,9 @@ export class ConnexionPage implements OnInit {
       prix: "",
       pays:"",
       langue: "fr",
-      age: ""
+      age: "",
+      metier: "",
+      énumération : true
    };
   erreur;
   @Input() password;

@@ -47,6 +47,33 @@
                 <ion-item class="login-item">
                   <ion-input type="password" name="password" placeholder="Confirmer le mot de passe" class="login-input" (keyup.enter)="inscription()"></ion-input>
                 </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="nom" placeholder="Nom" [(ngModel)]="user.nom" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="prenom" placeholder="Prénom" [(ngModel)]="user.prenom" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="description" placeholder="Courte Description" [(ngModel)]="user.description" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="adresse" placeholder="Adresse" [(ngModel)]="user.adresse" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="tel" placeholder="Numéro de téléphone" [(ngModel)]="user.telephone" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="siteWeb" placeholder="Votre site web" [(ngModel)]="user.siteWeb" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="prix" placeholder="Votre prix moyen de prestation" [(ngModel)]="user.prix" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="age" placeholder="Votre âge" [(ngModel)]="user.age" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
+                <ion-item class="login-item">
+                  <ion-input type="text" name="job" placeholder="Votre métier" [(ngModel)]="user.metier" class="login-input" (keyup.enter)="inscription()"></ion-input>
+                </ion-item>
                 <div class="text-center mb-3">
                   <small class="error" *ngIf="erreur">{{erreur}}</small>
                 </div>
