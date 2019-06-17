@@ -86,8 +86,14 @@ export class NetworkService {
         })
         .subscribe(
           data => {
-            console.log("subscribe register", data)
-            resolve(data)
+            console.log("subscribe register", data);
+            this.setCurrentUser(data).then((result) => {
+                if ( result['error']) {
+                } else {
+                    console.log('user enregistré', result)
+                    resolve(data);
+                }
+            })
           },
           err => {
             reject(err);
@@ -98,7 +104,7 @@ export class NetworkService {
   connexion(user, password) {
     return new Promise((resolve, reject) => {
      // console.log(user);
-      this.http.get(this.url + 'login?username='+user+'$password='+password)
+      this.http.get(this.url + 'login?username='+user+'&password='+password)
         /* .map(res => {
           return res;
         }) */
@@ -128,6 +134,7 @@ export class NetworkService {
     return new Promise((resolve, reject) => {
       console.log(token);
       this.storage.set('id_token_startdev', token);
+    this.storage.set('user_id', token.id);
       var session = this.storage.get('id_token_startdev') || null;
       if (session != null)
         resolve(true);

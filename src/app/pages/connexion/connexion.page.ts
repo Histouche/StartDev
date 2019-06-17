@@ -49,14 +49,14 @@ export class ConnexionPage implements OnInit {
       this.erreur = null;
       this.network.connexion(this.user, this.password).then((result) => {
           console.log(result);
-          if(result['error']) {
-              if(result['error'].indexOf("vérifiée")==-1) {
+          if ( result['error']) {
+              if ( result['error'].indexOf("vérifiée") == -1) {
                   this.erreur = "La combinaison de l'email et du mot de passe ne correspondent pas"
               } else {
                   this.erreur = "Votre adresse email n'a pas été vérifiée."
               }
           } else {
-              this.storage.set('user_id', result.id);
+              // this.storage.set('user_id', result.id);
               this.router.navigate(['/home']);
           }
       }).catch((err) => {
@@ -64,7 +64,7 @@ export class ConnexionPage implements OnInit {
       });
   }
 
-  inscription(){
+  inscription() {
       this.erreur = null;
       this.network.inscription(this.user).then((result) => {
         console.log(result);
