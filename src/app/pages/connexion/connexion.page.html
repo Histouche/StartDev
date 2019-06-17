@@ -16,10 +16,10 @@
             <ion-col size="12" size-md="6" class="mt-3 bloc-con" *ngIf="tab == true">
               <form>
                 <ion-item class="login-item">
-                  <ion-input type="text" name="email" placeholder="adresse mail" class="login-input" (keyup.enter)="connexion()"></ion-input>
+                  <ion-input type="text" name="email" placeholder="adresse mail"  [(ngModel)]="user.email" class="login-input" (keyup.enter)="connexion()"></ion-input>
                 </ion-item>
                 <ion-item class="login-item">
-                  <ion-input type="password" name="password" placeholder="mot de passe" class="login-input" (keyup.enter)="connexion()"></ion-input>
+                  <ion-input type="password" name="password" [(ngModel)]="user.password" placeholder="mot de passe" class="login-input" (keyup.enter)="connexion()"></ion-input>
                 </ion-item>
                 <div class="text-center mb-3">
                   <small class="error" *ngIf="erreur">{{erreur}}</small>
@@ -39,13 +39,13 @@
             <ion-col size="12" size-md="6" class="mt-3 bloc-con" *ngIf="tab == false">
               <form>
                 <ion-item class="login-item">
-                  <ion-input type="text" name="email" placeholder="adresse mail" class="login-input" (keyup.enter)="connexion()"></ion-input>
+                  <ion-input type="text" name="email" placeholder="adresse mail" [(ngModel)]="user.email" class="login-input" (keyup.enter)="inscription()"></ion-input>
                 </ion-item>
                 <ion-item class="login-item">
-                  <ion-input type="password" name="password" placeholder="mot de passe" class="login-input" (keyup.enter)="connexion()"></ion-input>
+                  <ion-input type="password" name="password" placeholder="mot de passe" [(ngModel)]="user.password" class="login-input" (keyup.enter)="inscription()"></ion-input>
                 </ion-item>
                 <ion-item class="login-item">
-                  <ion-input type="password" name="password" placeholder="Confirmer le mot de passe" class="login-input" (keyup.enter)="connexion()"></ion-input>
+                  <ion-input type="password" name="password" placeholder="Confirmer le mot de passe" class="login-input" (keyup.enter)="inscription()"></ion-input>
                 </ion-item>
                 <div class="text-center mb-3">
                   <small class="error" *ngIf="erreur">{{erreur}}</small>
