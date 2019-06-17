@@ -75,6 +75,33 @@ export class NetworkService {
     })
   }
 
+  postuler(user, annonce) {
+        console.log('fonction postuler');
+      return new Promise((resolve, reject) => {
+          console.log("Annonce concerné : ", annonce);
+          this.http.post(this.url + 'post/postule?userId=' + user.id + '&annonceId=' + annonce.id, '')
+              .map(res => {
+                  console.log("map res", res)
+                  return res;
+              })
+              .subscribe(
+                  data => {
+                      console.log("subscribe register", data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => {
+                      reject(err);
+                  }
+              );
+      });
+  }
+
   updateUser(user) {
       console.log("update user fonction");
       return new Promise((resolve, reject) => {

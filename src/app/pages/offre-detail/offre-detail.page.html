@@ -20,10 +20,10 @@
       <ion-col size="12" text-center class="title-prix mb-2">{{annonce.remuneration}} €</ion-col>
     </ion-row>
     <ion-row justify-content-center class=" mb-2">
-      <ion-col size="8" text-center class="btn-primary">Contacter {{annonce.entreprise}}</ion-col>
+      <ion-col size="8" text-center class="btn-primary" (click)="postuler()">Contacter {{annonce.entreprise}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12" text-center class="offre-ann mb-2">Description de la mission</ion-col>
+      <ion-col size="12"  text-center class="offre-ann mb-2">Description de la mission</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12" class="detail-offre">
@@ -48,8 +48,11 @@
       </ion-col>
       <ion-col size="auto">
         <ion-row class="h-100" align-items-center>
-          <ion-col class="btn-primary btn-mobile-contact rounded-circle text-center">
+          <ion-col *ngIf="postule == false" class="btn-primary btn-mobile-contact rounded-circle text-center" (click)="postuler()">
               <ion-icon name="paper-plane"></ion-icon>
+          </ion-col>
+          <ion-col *ngIf="postule == true" class="btn-primary btn-mobile-contact rounded-circle text-center" >
+            <ion-icon name="checkmark"></ion-icon>
           </ion-col>
         </ion-row>
       </ion-col>
