@@ -74,7 +74,7 @@ export class ProfilPage implements OnInit {
             }
         }).catch((err) => {
             console.log(err);
-        }
+        });
     }
 
 }
