@@ -142,5 +142,12 @@ export class NetworkService {
     })
   }
 
+  logout(){
+    return new Promise((resolve, reject) => {
+      this.storage.set('id_token_startdev', '');
+        resolve(true);
+    })
+  }
+
 
 }
