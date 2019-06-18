@@ -16,6 +16,9 @@
           <div class="edit-info-icon" routerLink="/edit-profil"><i class="material-icons">
             edit
           </i></div>
+          <div class="close-info-icon" (click)="lougout()"><i class="material-icons">
+            close
+          </i></div>
           <ion-col size="12" class="nomprenom pb-0" text-center>{{user.prenom}} {{user.nom}}</ion-col>
           <ion-col size="12" class="job" text-center>{{job}}</ion-col>
         </ion-row>
@@ -109,7 +112,7 @@
         <ion-row>
           <ion-col>
             <ion-row class="h-100 box-dash">
-              <ion-col size="12" class="number-dash py-0">14</ion-col>
+              <ion-col size="12" class="number-dash py-0">1</ion-col>
               <ion-col size="12" class="text-dash py-0">Apparations dans les recherches</ion-col>
             </ion-row>
           </ion-col>

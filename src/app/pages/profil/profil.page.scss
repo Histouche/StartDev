@@ -58,6 +58,7 @@ ion-title{
     transform: translateY(2px);
   }
 }
+
 .profil-infos{
   color: #fff;
   .nomprenom{
@@ -68,6 +69,16 @@ ion-title{
   position: absolute;
   z-index: 10;
   right: 15px;
+  top: 0;
+  font-size: 16px;
+  .edit-info{
+    border-left: 1px solid #03A9F4;
+  }
+}
+.close-info-icon{
+  position: absolute;
+  z-index: 10;
+  left: 15px;
   top: 0;
   font-size: 16px;
   .edit-info{
