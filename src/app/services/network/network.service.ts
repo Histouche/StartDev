@@ -74,8 +74,91 @@ export class NetworkService {
         )
     })
   }
-  
-  inscription(user) {
+
+  postuler(user, annonce) {
+        console.log('fonction postuler');
+      return new Promise((resolve, reject) => {
+          console.log("Annonce concerné : ", annonce);
+          this.http.post(this.url + 'post/postule?userId=' + user.id + '&annonceId=' + annonce.id, '')
+              .map(res => {
+                  console.log("map res", res)
+                  return res;
+              })
+              .subscribe(
+                  data => {
+                      console.log("subscribe register", data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => {
+                      reject(err);
+                  }
+              );
+      })
+      return new Promise((resolve, reject) => {
+          this.http.post(this.url + 'post/postule?userId=' + user.id + '&annonceId=' + annonce.id, '')
+              .subscribe(
+                  data => {
+                      console.log(data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => { reject(err) })
+      });
+  }
+
+  updateUser(user) {
+      console.log("update user fonction");
+      return new Promise((resolve, reject) => {
+          console.log("User a mettre à jour ", user);
+          this.http.get(this.url + 'update/user?username=' + user.username
+              + '&password=' + user.password
+              + '&email=' + user.email
+              + '&role=' + user.role
+              + '&nom=' + user.nom
+              + '&prenom=' + user.prenom
+              + '&adresse=' + user.adresse
+              + '&telephone=' + user.telephone
+              + '&description=' + user.description
+              + '&isDisponible=' + user.isDisponible
+              + '&siteWeb=' + user.siteWeb
+              + '&prix=' + user.prix
+              + '&pays=' + user.pays
+              + '&langue=' + 'fr'
+              + '&age=' + user.age )
+              .map(res => {
+                  console.log("map res", res)
+                  return res;
+              })
+              .subscribe(
+                  data => {
+                      console.log("subscribe update user", data);
+                      this.setCurrentUser(data).then((result) => {
+                          if ( result['error']) {
+                          } else {
+                              console.log('user enregistré', result)
+                              resolve(data);
+                          }
+                      });
+                  },
+                  err => {
+                      reject(err);
+                  }
+              )
+      });
+  }
+
+  exinscription(user) {
     console.log("dans register")
     return new Promise((resolve, reject) => {
       console.log("User a inscrire ", user);
@@ -86,8 +169,14 @@ export class NetworkService {
         })
         .subscribe(
           data => {
-            console.log("subscribe register", data)
-            resolve(data)
+            console.log("subscribe register", data);
+            this.setCurrentUser(data).then((result) => {
+                if ( result['error']) {
+                } else {
+                    console.log('user enregistré', result)
+                    resolve(data);
+                }
+            });
           },
           err => {
             reject(err);
@@ -95,28 +184,42 @@ export class NetworkService {
         )
     });
   }
-  connexion(user, password) {
+
+    inscription(user) {
+        console.log("dans register");
+        return new Promise((resolve, reject) => {
+            this.http.post(this.url + 'post/user', user)
+                .subscribe(
+                    data => {
+                        console.log(data);
+                        this.setCurrentUser(data).then((result) => {
+                            if ( result['error']) {
+                            } else {
+                                console.log('user enregistré', result)
+                                resolve(data);
+                            }
+                        });
+                    },
+                    err => { reject(err) })
+        });
+    }
+  connexion(user) {
     return new Promise((resolve, reject) => {
-     // console.log(user);
-      this.http.get(this.url + 'login?username='+user+'$password='+password)
+      console.log('user', user);
+      this.http.get(this.url + 'get/login?username=' + user.username + '&password=' + user.password)
         /* .map(res => {
           return res;
         }) */
         .subscribe(
           data => {
             console.log("user", data)
-            if (data && data['_body'].indexOf('error') == -1) {
-              console.log("premier if")
-              this.setCurrentUser(data['_body']).then(() => {
-                console.log("set current user ok")
-              }).catch((err) => {
-                console.log("set current user pas ok")
-                reject(err);
-              });
-            } else {
-              console.log(JSON.parse(data['_body']));
-              reject(JSON.parse(data['_body']));
-            }
+            this.setCurrentUser(data).then((result) => {
+                if ( result['error']) {
+                } else {
+                    console.log('user enregistré', result)
+                    resolve(data);
+                }
+            });
           },
           err => {
             reject(err);
@@ -128,6 +231,7 @@ export class NetworkService {
     return new Promise((resolve, reject) => {
       console.log(token);
       this.storage.set('id_token_startdev', token);
+        this.storage.set('user_id', token.id);
       var session = this.storage.get('id_token_startdev') || null;
       if (session != null)
         resolve(true);

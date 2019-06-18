@@ -15,7 +15,7 @@ export class ConnexionPage implements OnInit {
       username: "",
       password: "",
       email: "",
-      role: "",
+      role: "ROLE_FREELANCE",
       nom: "",
       prenom: "",
       adresse:"",
@@ -26,7 +26,9 @@ export class ConnexionPage implements OnInit {
       prix: "",
       pays:"",
       langue: "fr",
-      age: ""
+      age: "",
+      metier: "",
+      énumération : true
    };
   erreur;
   @Input() password;
@@ -47,32 +49,32 @@ export class ConnexionPage implements OnInit {
   }
   connexion() {
       this.erreur = null;
-      this.network.connexion(this.user, this.password).then((result) => {
+      this.network.connexion(this.user).then((result) => {
           console.log(result);
-          if(result['error']) {
-              if(result['error'].indexOf("vérifiée")==-1) {
+          if ( result['error']) {
+              if ( result['error'].indexOf("vérifiée") == -1) {
                   this.erreur = "La combinaison de l'email et du mot de passe ne correspondent pas"
               } else {
                   this.erreur = "Votre adresse email n'a pas été vérifiée."
               }
           } else {
-              this.storage.set('user_id', result.id);
-              this.router.navigate(['/home']);
+              // this.storage.set('user_id', result.id);
+              this.router.navigate(['/']);
           }
       }).catch((err) => {
           console.log(err);
       });
   }
 
-  inscription(){
+  inscription() {
       this.erreur = null;
       this.network.inscription(this.user).then((result) => {
         console.log(result);
           if(result['error']) {
               console.log("erreur inscription");
           } else {
-              this.storage.set('user_id', result.id);
-              this.router.navigate(['/home']);
+              // this.storage.set('user_id', result.id);
+              this.router.navigate(['/']);
           }
       }).catch((err) => {
         console.log(err);
