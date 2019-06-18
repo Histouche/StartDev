@@ -80,10 +80,6 @@ export class NetworkService {
       return new Promise((resolve, reject) => {
           console.log("Annonce concerné : ", annonce);
           this.http.post(this.url + 'post/postule?userId=' + user.id + '&annonceId=' + annonce.id, '')
-              .map(res => {
-                  console.log("map res", res)
-                  return res;
-              })
               .subscribe(
                   data => {
                       console.log("subscribe register", data);
