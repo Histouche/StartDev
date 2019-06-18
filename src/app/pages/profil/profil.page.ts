@@ -12,11 +12,12 @@ import { Storage } from '@ionic/storage';
 })
 export class ProfilPage implements OnInit {
 
+    erreur;
     user = {
         username: "",
         password: "",
         email: "",
-        role: "ROLE_FREELANCE",
+        role: "",
         nom: "",
         prenom: "",
         adresse:"",
@@ -38,7 +39,7 @@ export class ProfilPage implements OnInit {
     offresEnCours = 2;
     job = "Developpeur Full Stack / Intégrateur";
 
-    constructor(private router: Router , private networkService: NetworkService, private http: HttpClient, public storage: Storage) {
+    constructor(private router: Router , private network: NetworkService, private http: HttpClient, public storage: Storage) {
 
     }
     ngOnInit() {
@@ -58,6 +59,22 @@ export class ProfilPage implements OnInit {
             this.user.age = val.age;
             console.log(this.user);
         });
+    }
+
+    logout() {
+        this.erreur = null;
+        this.network.logout().then((result) => {
+            console.log(result);
+            if(result['error']) {
+                console.log("erreur postuler");
+            } else {
+                // this.storage.set('user_id', result.id);
+                this.router.navigate(['/connexion']);
+                
+            }
+        }).catch((err) => {
+            console.log(err);
+        }
     }
 
 }
